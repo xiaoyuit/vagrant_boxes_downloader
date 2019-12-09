@@ -1,0 +1,26 @@
+{
+    "name": "Vagrant Boxes 下载工具",
+    "version": "1.0.1",
+    "manifest_version": 2,
+    "description": "Vagrant Boxes 下载工具",
+    "icons": {
+        "48": "logo_avatar.png"
+    },
+    "browser_action": {
+      "default_icon": "icon.png",
+      "default_popup": "popup.html"
+    },
+    "content_scripts": [{  
+         "matches": ["https://app.vagrantup.com/*"],   
+         "js": ["add_button.js"],   
+         "run_at": "document_end",  
+         "all_frames": true   
+    }],
+    "permissions": [
+        "tabs",
+        "http://*/",
+        "activeTab",
+        "notifications",
+        "storage"
+    ]
+}
